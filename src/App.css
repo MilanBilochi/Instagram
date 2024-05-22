@@ -3,7 +3,10 @@
 }
 .story {
   display: flex;
-  overflow: scroll;
+  overflow: scroll ;
+}
+.story::-webkit-scrollbar {
+  display: none;
 }
 .story-card{
   display: flex;

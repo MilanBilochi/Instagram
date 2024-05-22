@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Grow from '@mui/material/Grow';
+import Fade from '@mui/material/Fade';
+import CloseIcon from '@mui/icons-material/Close';
+import MoreHorizSharpIcon from '@mui/icons-material/MoreHorizSharp';
 
 function App() {
   let [photoMode, setPhotoMode] = useState(false);
@@ -39,15 +43,18 @@ function App() {
     <div className="App">
       {
         photoMode ?
-          <div className='story-mode'>
-            <img className='story-photo' src="https://assets-global.website-files.com/61005d24feea1014e5ad8d50/61005d24feea100d1cad9156_60d4beeedc5e92b152b6a824_IG-3d.jpeg" alt="" />
-            <div className='floating-buttons'>
-              <label className='minus'>...</label>
-              <label onClick={() => {
-                setPhotoMode(false);
-              }}>X</label>
+          <Grow in={photoMode} >
+            <div className='story-mode'>
+              <img className='story-photo' src="https://assets-global.website-files.com/61005d24feea1014e5ad8d50/61005d24feea100d1cad9156_60d4beeedc5e92b152b6a824_IG-3d.jpeg" alt="" />
+              <div className='floating-buttons'>
+                <MoreHorizSharpIcon fontSize='large' />
+                <CloseIcon fontSize='large' onClick={() => {
+                  setPhotoMode(false);
+                }} />
+              </div>
             </div>
-          </div> :
+          </Grow>
+          :
           <>
             <header className='logo'>
               Instagram
@@ -61,7 +68,8 @@ function App() {
                   </label>
                 </div>)
               })}
-            </div></>
+            </div>
+          </>
       }
     </div>
   );
