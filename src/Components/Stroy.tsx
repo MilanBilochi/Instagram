@@ -1,11 +1,34 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "../Components/Story.css"
 import CloseIcon from '@mui/icons-material/Close';
 import MoreHorizSharpIcon from '@mui/icons-material/MoreHorizSharp';
 
 export default function Story({ setPhotoMode, data }: any) {
-    console.log('my images : ' + JSON.stringify(data))
     let [index, setIndex] = useState(0);
+   
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            console.log(index);
+            if(index === data.length-1) {
+                clearInterval(intervalId);
+                setPhotoMode(false)
+                setIndex(0);
+            } else {
+                setIndex(index+1)
+            }
+        }, 5000);
+        return () => clearInterval(intervalId);
+    }, [index])
+
+    function getProgressBarClassName(currentIndex:any) {
+        if(index == currentIndex) {
+            return "progress-bar progress-bar-active"
+        } else if(currentIndex < index) {
+            return "progress-bar progress-bar-finished"
+        } else {
+            return "progress-bar"
+        }   
+    }
     return (
         <div className="story-open">
             <div className="story-open-bar">
@@ -24,10 +47,10 @@ export default function Story({ setPhotoMode, data }: any) {
             </div>
             <div className="progress-bars">
                 {
-                    data.map(() => {
+                    data.map((val:any, key:any) => {
                         return (
                             <div className="progress-bar-container">
-                                <div style={{ animationDuration: '3s' }} className="progress-bar progress-bar-active"></div>
+                                <div style={{ animationDuration: '5s' }} className={getProgressBarClassName(key)}></div>
                             </div>
                         )
                     })
