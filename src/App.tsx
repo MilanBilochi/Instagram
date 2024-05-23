@@ -8,6 +8,7 @@ function App() {
   let [data, setData] = useState([])
   let [photoMode, setPhotoMode] = useState(false);
   let [images, setImages] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   // let [storySeen, setStorySeen] = useState();
   // let [selectedUser, setSelectedUser] = useState();
   // let data = [
@@ -51,7 +52,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('103.59.75.43:3032');
+        const response = await fetch('http://127.0.0.1:3002');
         if (!response.ok) {
           throw new Error('API Failed due to some reason')
         }
@@ -60,6 +61,8 @@ function App() {
         console.log('milan data : ' + jsonData)
       } catch (error) {
         console.log('something went wrong')
+      } finally {
+        setIsLoading(false);
       }
     }
     fetchData();
@@ -81,6 +84,7 @@ function App() {
 
   return (
     <div className="App">
+      {isLoading && <p>Loading data...</p>}
       {
         photoMode ?
           <Grow in={photoMode} >
