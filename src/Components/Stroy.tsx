@@ -16,7 +16,7 @@ export default function Story({ setPhotoMode, data }: any) {
             } else {
                 setIndex(index+1)
             }
-        }, 5000);
+        }, 4000);
         return () => clearInterval(intervalId);
     }, [index])
 
@@ -29,6 +29,20 @@ export default function Story({ setPhotoMode, data }: any) {
             return "progress-bar"
         }   
     }
+    function handleNext() {
+        if(index == data.length-1) {
+            setPhotoMode(false)
+        } else {
+            setIndex(index+1);
+        }
+    }
+    function handlePrevious() {
+        if(index>0) {
+            setIndex(index-1)
+        } 
+    }
+
+
     return (
         <div className="story-open">
             <div className="story-open-bar">
@@ -50,13 +64,15 @@ export default function Story({ setPhotoMode, data }: any) {
                     data.map((val:any, key:any) => {
                         return (
                             <div className="progress-bar-container">
-                                <div style={{ animationDuration: '5s' }} className={getProgressBarClassName(key)}></div>
+                                <div style={{ animationDuration: '4s' }} className={getProgressBarClassName(key)}></div>
                             </div>
                         )
                     })
                 }
             </div>
             <div className='story-content'>
+                <div className="navigante-next" onClick={handleNext}></div>
+                <div className="navigante-previous" onClick={handlePrevious}></div>
                 <img src={data[index]} alt="" />
             </div>
         </div>
