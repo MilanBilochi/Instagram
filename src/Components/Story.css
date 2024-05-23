@@ -1,0 +1,37 @@
+.story-info img {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    border-radius: 50%;
+    background-color: white;
+}
+.story-info label {
+    font-size: small;
+    color: white;
+}
+.story-info {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+.story-open-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.time {
+    color: rgb(185, 185, 185);
+}
+.icons {
+    margin-right: 10px;
+    color: white;
+}
+.story-content img{
+    width: 100%;
+}
+.story-content {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
