@@ -58,7 +58,7 @@ function App() {
           :
           <>
             <header className='logo'>
-              <img className='logo' src="./assets/logo.png" alt="hello" />
+              <img src="https://1000logos.net/wp-content/uploads/2017/02/Logo-Instagram.png" alt="" />
             </header>
             <div className='story'>
               {data.map((val) => {
