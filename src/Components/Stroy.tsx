@@ -6,20 +6,6 @@ import MoreHorizSharpIcon from '@mui/icons-material/MoreHorizSharp';
 export default function Story({ setPhotoMode, data }: any) {
     console.log('my images : ' + JSON.stringify(data))
     let [index, setIndex] = useState(0);
-    let stories = [
-        {
-            1: 1
-        },
-        {
-            1: 1
-        }, {
-            1: 1
-        }, {
-            1: 1
-        }, {
-            1: 1
-        },
-    ]
     return (
         <div className="story-open">
             <div className="story-open-bar">
