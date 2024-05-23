@@ -47,6 +47,29 @@
   border-radius: inherit;
   background: linear-gradient(to right, orange, purple);
 }
+.story-box-seen {
+  max-width: min-content;
+  position: relative;
+  box-sizing: border-box;
+  background-color: white;
+  background-clip: padding-box;
+  border: solid px transparent;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+.story-box-seen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  margin: -3px;
+  border-radius: inherit;
+  background: gray;
+}
+
 .story-image{
   display: flex;
   flex-direction: column;
