@@ -4,8 +4,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import MoreHorizSharpIcon from '@mui/icons-material/MoreHorizSharp';
 
 export default function Story({ setPhotoMode, data, name, time }: any) {
+    //state to save current index of story
     let [index, setIndex] = useState(0);
-   
+    
+    //initiating interval of 4 seconds
     useEffect(() => {
         const intervalId = setInterval(() => {
             if(index === data.length-1) {
@@ -19,6 +21,7 @@ export default function Story({ setPhotoMode, data, name, time }: any) {
         return () => clearInterval(intervalId);
     }, [index])
 
+    //this method will return the style class of story progress bar
     function getProgressBarClassName(currentIndex:any) {
         if(index == currentIndex) {
             return "progress-bar progress-bar-active"
