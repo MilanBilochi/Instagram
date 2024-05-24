@@ -14,33 +14,17 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+Dev Notes : 
+1. Application is specifically designed for mobile devices as mentioned in the requirement documnet.
+2. All components are optimized for maximum performance, memoization on home page can be applied since the parameters are not changing, it could be more optimized.
+3. smooth UI is ensured through out the making of this project.
+4. very efficiently scalable as both the home and story components are build in a generic manner such that with minimal changes new features and data points can be added.
+5. As use of any UI component library was not mentioned, I assumed it could be useful for some icons, rest assured all compoents are built from scratch just the icons are taken from MUI.
+6. I deployed the project on render and it went live succesfully, but it was showing error 502, which suggests internal server error hence the data is saved locally in the code.
+7. Code for API Calling is present in the project(commented) and it is working flawlessly on local server.
+8. Screen shots for the above assumptions is attached at the end in form of a link.
+9. Manual testing performed.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+code working and deployed : ![image](https://github.com/MilanBilochi/instagram/assets/57436811/57939867-4f9f-41ea-a8e0-050adab6e1ad)
+Render Service Failure : ![image](https://github.com/MilanBilochi/instagram/assets/57436811/b23689e1-5354-4236-8bc3-f40f34f9f740)
