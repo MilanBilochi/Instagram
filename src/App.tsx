@@ -9,6 +9,9 @@ const App: React.FC = () => {
   let [photoMode, setPhotoMode] = useState(false);
   let [images, setImages] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentName, setCurrentName] = useState('');
+  const [currentTime, setCurrentTime] = useState('');
+
   // let [storySeen, setStorySeen] = useState();
   // let [selectedUser, setSelectedUser] = useState();
   // let data = [
@@ -68,8 +71,9 @@ const App: React.FC = () => {
     fetchData();
   }, []) 
 
-  function handleOpenStory(name: any, imgs: any, id: any) {
-    console.log(imgs);
+  function handleOpenStory(name: any, imgs: any, id: any, time: any) {
+    setCurrentName(name);
+    setCurrentTime(time);
     setImages(imgs);
     setPhotoMode(true);
   }
@@ -89,7 +93,7 @@ const App: React.FC = () => {
         photoMode ?
           <Grow in={photoMode} >
             <div className="story-container">
-              <Story setPhotoMode={setPhotoMode} data={images} />
+              <Story setPhotoMode={setPhotoMode} data={images} name={currentName} time={currentTime} />
             </div>
           </Grow>
           :
@@ -102,7 +106,7 @@ const App: React.FC = () => {
               {data.map((val) => {
                 return (<div className='story-card' key={val.id}>
                   <div className={setStorySeenColor(val.seen)}>
-                    <img onClick={() => handleOpenStory(val.name, val.images, val.id)} className='story-image' src="https://plus.unsplash.com/premium_photo-1664300012015-480f872c11a1?q=80&w=1039&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+                    <img onClick={() => handleOpenStory(val.name, val.images, val.id, val.time)} className='story-image' src={val.displyPicture} alt="" />
                   </div>
                   <label>
                     {val.name}
