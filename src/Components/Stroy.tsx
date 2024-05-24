@@ -8,7 +8,6 @@ export default function Story({ setPhotoMode, data }: any) {
    
     useEffect(() => {
         const intervalId = setInterval(() => {
-            console.log(index);
             if(index === data.length-1) {
                 clearInterval(intervalId);
                 setPhotoMode(false)
@@ -63,7 +62,7 @@ export default function Story({ setPhotoMode, data }: any) {
                 {
                     data.map((val:any, key:any) => {
                         return (
-                            <div className="progress-bar-container">
+                            <div className="progress-bar-container" key={key}>
                                 <div style={{ animationDuration: '4s' }} className={getProgressBarClassName(key)}></div>
                             </div>
                         )
