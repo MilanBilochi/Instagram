@@ -59,14 +59,14 @@ const myData = [
     }
   ];
 
-// app.get('/', (req, res) => {
-//   res.json(myData); // Send JSON data
-// });
-app.get('/', (req:any, res:any) => {
-    res.json(myData); // Send JSON data
-  });
+app.get('/', (req, res) => {
+  res.json(myData); // Send JSON data
+});
+// app.get('/', (req:any, res:any) => {
+//     res.json(myData); // Send JSON data
+//   });
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
 
-export {}
+// export {}
